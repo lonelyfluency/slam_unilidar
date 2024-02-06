@@ -4,10 +4,10 @@
 	<arg name="rviz" default="true" />
 
 	<!-- 启动节点: pointlio_mapping -->
-	<node pkg="point_lio_unilidar" type="pointlio_mapping" name="laserMapping" output="screen">
+	<node pkg="point_lio" type="pointlio_mapping" name="laserMapping" output="screen">
 
 		<!-- 加载参数文件 -->
-		<rosparam command="load" file="$(find point_lio_unilidar)/config/avia.yaml" />
+		<rosparam command="load" file="$(find point_lio)/config/avia.yaml" />
 
 		<!-- 设置参数: 是否使用IMU作为Point-LIO的输入（0表示不使用，1表示使用） -->
 		<param name="use_imu_as_input" type="bool" value="0"/> <!--change to 1 to use IMU as input of Point-LIO-->
@@ -42,7 +42,7 @@
 
 	<!-- 如果启动RViz可视化，则在一个group中启动rviz节点 -->
 	<group if="$(arg rviz)">
-		<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find point_lio_unilidar)/rviz_cfg/loam_livox.rviz" />
+		<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find point_lio)/rviz_cfg/loam_livox.rviz" />
 	</group>
 
 	<!-- 设置launch文件启动时的前缀命令（此处是用gdb进行调试） -->
