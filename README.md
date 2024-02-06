@@ -20,16 +20,15 @@ sudo apt-get install libeigen3-dev
 1. Download this repo 
 ```
 git clone https://github.com/lonelyfluency/slam_unilidar.git
+cd slam_unilidar
 ```
 2. Build unitree_lidar_ros
 ```
-cd slam_unilidar
 cd unitree_lidar_ros
 catkin_make
 ```
 3. Build point_lio
 ```
-cd ..
 cd point_lio
 catkin_make
 ```
@@ -47,5 +46,5 @@ roslaunch unitree_lidar_ros run_withou_rviz.launch
 ```
 cd point_lio
 source devel/setup.bash
-roslaunch point_lio_unilidar mapping_unilidar.launch
+roslaunch point_lio mapping_unilidar.launch
 ```
