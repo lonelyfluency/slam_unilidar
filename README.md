@@ -27,24 +27,19 @@ cd slam_unilidar
 cd unitree_lidar_ros
 catkin_make
 ```
-3. Build point_lio
-```
-cd point_lio
-catkin_make
-```
 
 ## Use
-1. Get your L1 lidar ready.
-2. Run unilidar sdk
+1. Power on your L1 lidar and setup
 ```
 cd unitree_lidar_ros
 source devel/setup.bash
 sudo chmod 777 /dev/ttyUSB0
-roslaunch unitree_lidar_ros run_withou_rviz.launch
 ```
-3. Run point-lio
+2. Run unilidar sdk
 ```
-cd point_lio
-source devel/setup.bash
+roslaunch unitree_lidar_ros run_without_rviz.launch
+```
+3. Run point-lio/ SLAM module
+```
 roslaunch point_lio mapping_unilidar.launch
 ```
