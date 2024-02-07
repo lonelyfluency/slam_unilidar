@@ -50,3 +50,21 @@ roslaunch point_lio mapping_unilidar.launch
 ```
 pcl_viewer scans.pcd
 ```
+## Additional instructions
+1. For state estimation in locomotion, after launch point_lio, you can refer to topic "/path" by
+```
+rostopic echo /path
+```
+2. For record a rosbag, you should focus on topics /unilidar/imu and /unilidar/cloud, you can use
+```
+rosbag record -O bag_name.bag /unilidar/imu /unilidar/cloud
+```
+3. You can also run slam without the L1 lidar, if you have recorded a rosbag:
+```
+roslaunch point_lio mapping_unilidar.launch
+cd the/dir/of/your/bag
+rosbag play bag_name.bag
+```
+  E.g, you can try this bag from Unitree
+  [unilidar-2023-09-22-12-42-04.bag - Download](https://oss-global-cdn.unitree.com/static/unilidar-2023-09-22-12-42-04.zip)
+  
