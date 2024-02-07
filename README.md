@@ -43,3 +43,10 @@ roslaunch unitree_lidar_ros run_without_rviz.launch
 ```
 roslaunch point_lio mapping_unilidar.launch
 ```
+
+## Point cloud
+1. After running SLAM, you can find the point cloud of your last SLAM result in point_lio/PCD/scans.pcd
+2. You can view your point cloud by
+```
+pcl_viewer scans.pcd
+```
